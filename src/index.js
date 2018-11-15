@@ -1,6 +1,37 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import './index.css';
-import Hello from './Hello';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
-ReactDom.render(<Hello />, document.getElementById('root'));
+
+class Hello extends Component {
+	constructor () {
+		super();
+
+		this.state= {
+			articles: [
+				{id: 1, 'title': 'This is one'},
+				{id: 2, 'title': 'This is two'},
+				{id: 3, 'title': 'This is three'}
+			]
+		};
+	}
+
+	render () {
+		const { articles } = this.state;
+		return (
+			<div>
+				<ul>
+					{articles.map(el => <li> {el.id}: {el.title}</li>)}
+				</ul>
+			</div>
+		);
+	}
+}
+
+
+
+
+
+ReactDOM.render(
+  <Hello />,
+  document.getElementById('root')
+);

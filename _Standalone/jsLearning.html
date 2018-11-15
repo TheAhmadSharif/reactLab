@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bind Learning</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	window.color = "red"; 
+    var o = {
+	    color: "blue",
+	    age: '20' 
+	}; 
+   function sayColor(){ 
+
+   
+
+
+       alert(this.color); 
+   } 
+   var objectSayColor = sayColor.bind(o); 
+   // objectSayColor(); 
+
+/* let and Const */
+
+let a = 'A';
+
+function b () {
+	 a = 'B';
+	console.log(a);
+}
+
+b();
+
+console.log(a);
+let number = [1,2,3,4];
+number.map(num => console.log(num));
+
+</script>
+</body>
+</html>

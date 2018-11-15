@@ -2,40 +2,34 @@ var Hello = React.createClass({
 			getDefaultProps: function () {
 				return {
 					firstName: 'Mr.',
-					lastName: 'Sharif'
+					lastName: 'Sharif',
+					mofiz: 'mofiz'
 				};	
 			},
 			getInitialState: function () {
 				return {
-					firstName: this.props.firstName
+					firstName: this.props.mofiz
 				};
-				
 			},
-			onButtonClick: function (e) {
+			balsal: function (e) {
 				e.preventDefault();
 				var balsal = this.refs.Abul.value;
-
 				this.refs.Abul.value = '';
-
 				if (typeof name === 'string' && balsal.length > 0 ) {
 						this.setState({
-								firstName: balsal
+								mofiz: balsal
 						});
 				}
-
-				
 			},
-
 			render: function () {
 				var name = this.state.firstName;
 				var message = this.props.message;
-
 				return (
 					<div>
 						<h2>Hello { name } </h2>
 						<h4>{ message + '!!!' }</h4>
 
-						<form onSubmit={this.onButtonClick}>
+						<form onSubmit={this.balsal}>
 							<input type="text" ref="Abul" />
 							<button>Set Name</button>
 						</form>

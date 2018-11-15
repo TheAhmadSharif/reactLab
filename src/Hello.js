@@ -1,12 +1,46 @@
 import React from 'react';
 let logo = 'googlelogo_color_272x92dp.png';
 class Hello extends React.Component {
+	
+	constructor() {
+		super();
+		this.state = {
+			initialState: 'initialState',
+			switchh: false,
+			count: 1
+		}
+
+		this.changeInitialState = this.changeInitialState.bind(this); 
+		this.mofiz = 'mofixxxx';
+
+
+	};
+
+	changeInitialState () {
+		this.setState ({
+			initialState: 'dretye',
+			switchh: !this.state.switchh,
+			count: this.state.count + 1
+		});
+		console.log(this, '23');
+
+	};
+
+
 	render () {
-		let name = 'Ahmad Sharif';
+		let balsal;
+		if (this.state.switchh) {
+			 balsal = '00000000';
+		}
+
+		else {
+			 balsal = '00000000';
+		}
 		return (
 			<div>
 				<Header />
-					<h2>Hello { name }</h2>
+					<h2 className="title" onClick={this.changeInitialState}>Hello {this.state.initialState}
+					 { this.state.count } {this.mofiz}</h2>
 					 <hr />
 				<Footer />
 			</div>
@@ -25,7 +59,6 @@ class Header extends React.Component {
 		);
 	}
 }
-
 class Logo extends React.Component {
 	render () {
 		return (
@@ -33,7 +66,6 @@ class Logo extends React.Component {
 		);
 	}
 }
-
 class Footer extends React.Component {
 	balsal () {
 		let a = 2;
